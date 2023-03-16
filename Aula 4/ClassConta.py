@@ -13,8 +13,17 @@ class Conta:
         self.saldo += valor
     
     def Saque(self,valor):
-        self.saldo -= valor
-        input("Retire o dinheiro na abertura abaixo.")
-    
+        if self.saldo >= valor:
+            self.saldo -= valor
+            print(f'O seu novo saldo é: {self.saldo}')
+            return True
+        else:
+            print(f'Não vai rolar! Seu saldo é: {self.saldo}')
+            return False
     def Extrato(self):
-        print(f'O saldo da conta é: {self.saldo}')
+        print(f'O saldo da conta {self.cod} é: {self.saldo}')
+
+    def Transfere(self,destino,valor):
+        if self.Saque(valor):
+            destino.Deposita(valor)
+        print(self.saldo)
