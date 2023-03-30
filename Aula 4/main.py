@@ -1,4 +1,4 @@
-from cliente import Cliente
+from classCliente import Cliente
 from classConta import *
 
 if __name__ == '__main__':    
