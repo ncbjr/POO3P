@@ -1,5 +1,5 @@
 from cliente import Cliente
-from ClassConta import *
+from classConta import *
 
 if __name__ == '__main__':    
     cliente1 = Cliente('Nilton','Junior','17754327775')
