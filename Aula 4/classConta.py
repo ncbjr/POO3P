@@ -1,4 +1,4 @@
-from classHistorico import Historico
+from classExtrato import Extrato
 
 class Conta:
     def __init__(self,cod,titular,saldo,limite):
@@ -6,7 +6,7 @@ class Conta:
         self.titular = titular
         self.saldo = saldo
         self.limite = limite
-        self.historico = Historico()
+        self.historico = Extrato()
 
     def Exibir(self):
         print(f'Conta: {self.cod}\nTitular: {self.titular}\nSaldo: {self.saldo}\nLimite: {self.limite}')

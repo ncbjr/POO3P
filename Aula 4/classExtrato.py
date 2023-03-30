@@ -1,6 +1,6 @@
 from datetime import datetime
 
-class Historico:
+class Extrato:
     def __init__(self):
         self.data_abertura = datetime.today()
         self.transacoes = list()
