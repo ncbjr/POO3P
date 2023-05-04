@@ -1,11 +1,16 @@
 from datetime import datetime
 
-class Extrato:
+class Historico:
     def __init__(self):
-        self.data_abertura = datetime.today()
-        self.transacoes = list()
+        self.__transacoes = list()
 
+    @property
+    def transacoes(self):
+        return self.__transacoes
+    
     def imprime(self):
-        print(f'Data de abertura: {self.data_abertura}')
         for transacao in self.transacoes:
             print(f'{transacao}')
+    
+    def registrarTransacao(self, transacao):
+        self.transacoes.append(datetime.today() + ' - ' + transacao)
