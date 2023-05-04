@@ -1,3 +1,29 @@
+import classCliente
+
+# Exemplo de uso:
+cliente1 = Cliente('João')
+cliente2 = Cliente('Maria')
+
+conta1 = Conta(cliente1, 1000, 500)
+conta2 = Conta(cliente2, 500, 0)
+
+conta1.depositar(200)
+conta1.sacar(300)
+conta1.transferir(conta2, 500)
+
+print(f"Saldo da conta de {cliente1.nome}: R$ {conta1.saldo:.2f}")
+print(f"Saldo da conta de {cliente2.nome}: R$ {conta2.saldo:.2f}")
+
+for transacao in conta1.historico.transacoes:
+    print(transacao)
+
+for transacao in conta2.historico.transacoes:
+    print(transacao)
+
+
+
+
+
 from classCliente import Cliente
 from classConta import *
 

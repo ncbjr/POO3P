@@ -1,16 +1,36 @@
-from classExtrato import Extrato
+from classExtrato import Historico
 
 class Conta:
-    def __init__(self,cod,titular,saldo,limite):
-        self.cod = cod
-        self.titular = titular
-        self.saldo = saldo
-        self.limite = limite
-        self.historico = Extrato()
+    def __init__(self,cliente,saldo=0,limiteEspecial=100):
+        self.__titular = cliente
+        self.__saldo = saldo
+        self.__limite = limiteEspecial
+        self.__historico = Historico()
 
-    def Exibir(self):
-        print(f'Conta: {self.cod}\nTitular: {self.titular}\nSaldo: {self.saldo}\nLimite: {self.limite}')
+    @property
+    def titular(self):
+        return self.__titular
     
+    @property
+    def saldo(self):
+        return self.__saldo
+    
+    @property
+    def limite(self):
+        return self.__limite
+    
+    @property
+    def historico(self):
+        return self.__historico
+
+######################################################
+    
+    @saldo.setter
+    def saldo(self,valor):
+        if valor < (self.limite) < 0:
+            print('Não é possível ter saldo negativo além do limite especial.')
+        self.__saldo = valor
+
     def Deposita(self,valor):
         self.saldo += valor
         self.historico.transacoes.append("depósito de {}".format(valor))
