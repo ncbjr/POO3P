@@ -12,4 +12,4 @@ funcionarios.append(Coordenador(nomes[1],idades[1],cpfs[1],salarios[1]))
 funcionarios.append(Analista(nomes[2],idades[2],cpfs[2],salarios[2]))
 
 for funcionario in funcionarios:
-    print(funcionario.nome,type(funcionario),funcionario.salario,funcionario.calculaBonus())
+    print('|' + '-'*40 + '|' + '\n' + f'Nome: {funcionario.nome}\nTipo do objeto: {type(funcionario)}\nSalário: {funcionario.salario}\nBônus anual: {funcionario.calculaBonus()}\n|' + '-'*40 + '|')
